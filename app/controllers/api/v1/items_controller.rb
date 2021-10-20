@@ -1,6 +1,6 @@
 class Api::V1::ItemsController < ApplicationController
     def index 
-        items = Item.all.include(:category)
+        items = Item.all.includes(:category)
         render json: {
             data: ActiveModelSerializers::SerializableResource.new(items, each_serializer: ItemSerializer),
             message: ['Items fetched successfully'],

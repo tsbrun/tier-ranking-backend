@@ -1,5 +1,5 @@
 class ItemSerializer < ActiveModel::Serializer
-  attributes :id, :name, :img
+  attributes :id, :name, :img, :category
   # belongs_to :category, serializer: CategorySerializer
 
   def category

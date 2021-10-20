@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2021_10_20_191019) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id"
-    t.integer "rank"
+    t.integer "rank", default: 0
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 

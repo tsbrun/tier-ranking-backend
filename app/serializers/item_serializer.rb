@@ -1,5 +1,5 @@
 class ItemSerializer < ActiveModel::Serializer
-  attributes :id, :name, :img
+  attributes :id, :name, :img, :rank
   attributes :category
 
   def category

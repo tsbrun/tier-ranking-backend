@@ -24,8 +24,6 @@ movies.items.build([
     {name: "Alita: Battle Angel", img: "https://m.media-amazon.com/images/M/MV5BMTQzYWYwYjctY2JhZS00NTYzLTllM2UtZWY5ZTk0NmYwYzIyXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg"}
 ]).each { |m| m.save }
 
-random_items = Item.new([
-    {name: "Contigo", img: "https://m.media-amazon.com/images/I/61VCQaerr9L._AC_SS450_.jpg"},
-    {name: "black and white composition book", img: "https://images.squarespace-cdn.com/content/v1/53f6249be4b0fa46860f073c/1591741383305-2SP0KIKOVOBIK4XTXQ4D/composition.jpg?format=300w"},
-    {name: "Island Mango", img: "https://b3h2.scene7.com/is/image/BedBathandBeyond/300626668493769p?$690$&wid=690&hei=690"}
-]).each { |i| i.save }
+Item.new({name: "Contigo", img: "https://m.media-amazon.com/images/I/61VCQaerr9L._AC_SS450_.jpg"}).save 
+Item.new({name: "black and white composition book", img: "https://images.squarespace-cdn.com/content/v1/53f6249be4b0fa46860f073c/1591741383305-2SP0KIKOVOBIK4XTXQ4D/composition.jpg?format=300w"}).save
+Item.new({name: "Island Mango", img: "https://b3h2.scene7.com/is/image/BedBathandBeyond/300626668493769p?$690$&wid=690&hei=690"}).save

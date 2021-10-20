@@ -7,6 +7,8 @@ class ItemSerializer < ActiveModel::Serializer
     #   id: object.category.id,
     #   title: object.category.title
     # }
+    
+    # avoid error - undefined method 'id' for nil:NilClass
     object.category || false 
   end
 end

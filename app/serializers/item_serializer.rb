@@ -1,14 +1,4 @@
 class ItemSerializer < ActiveModel::Serializer
   attributes :id, :name, :img, :rank
-  attributes :category
-
-  def category
-    # {
-    #   id: object.category.id,
-    #   title: object.category.title
-    # }
-    
-    # avoid error - undefined method 'id' for nil:NilClass
-    object.category || false 
-  end
+  belongs_to :category, include: false, embed: :id 
 end

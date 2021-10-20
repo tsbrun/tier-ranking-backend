@@ -1,6 +1,5 @@
 class CategorySerializer < ActiveModel::Serializer
   attributes :id, :title, :items
-  # has_many :items
 
   def items 
     object.items.map do |item|

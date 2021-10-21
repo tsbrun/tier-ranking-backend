@@ -10,7 +10,12 @@ class Api::V1::ItemsController < ApplicationController
     end
 
     def create
-        item = Item.new(item_params)
+        if params[:item][:category] == nil
+            item = Item.new(item_params)
+        else
+            item = Category.find(params[:item][:category][:id]).items.build(item_params)
+        end
+
         if item.save
             render json: {
                 data: ActiveModelSerializers::SerializableResource.new(item, serializer: ItemSerializer),

@@ -8,4 +8,14 @@ class Api::V1::ItemsController < ApplicationController
             type: 'Success'
         }
     end
+
+    def create
+
+    end
+
+    private 
+
+    def item_params 
+        params.require(:item).permit(:name, :img, :rank, :category)
+    end
 end

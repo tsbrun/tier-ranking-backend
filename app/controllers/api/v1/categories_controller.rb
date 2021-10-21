@@ -10,9 +10,14 @@ class Api::V1::CategoriesController < ApplicationController
     end
 
     def create 
-        @category = Category.new(category_params)
-        if @category.save 
-            render json: @category, status: :accepted
+        category = Category.new(category_params)
+        if category.save 
+            render json: {
+                data: ActiveModelSerializers::SerializableResource.new(category, serializer: CategorySerializer),
+                message: ['Category created successfully'],
+                status: 200,
+                type: 'Success'
+            }
         else
             render json: { errors: @category.errors.full_messages }, status: :unprocessible_entity
         end

@@ -18,6 +18,8 @@ class Api::V1::ItemsController < ApplicationController
                 status: 200, 
                 type: 'Success'
             }
+        else
+            render json: { errors: item.errors.full_messages }, status: :unprocessible_entity
         end
     end
 

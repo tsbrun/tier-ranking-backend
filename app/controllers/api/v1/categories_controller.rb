@@ -23,7 +23,7 @@ class Api::V1::CategoriesController < ApplicationController
         end
     end
 
-    params 
+    private 
 
     def category_params
         params.require(:category).permit(:title)

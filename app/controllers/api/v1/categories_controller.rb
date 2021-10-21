@@ -16,6 +16,6 @@ class Api::V1::CategoriesController < ApplicationController
     params 
 
     def new_category
-        params.require(:category).permit(:title)
+        params.permit(:title)
     end
 end

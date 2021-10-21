@@ -10,7 +10,15 @@ class Api::V1::ItemsController < ApplicationController
     end
 
     def create
-
+        item = Item.new(item_params)
+        if item.save
+            render json: {
+                data: ActiveModelSerializers::SerializableResource.new(item, serializer: ItemSerializer),
+                message: ['Item created successfully'],
+                status: 200, 
+                type: 'Success'
+            }
+        end
     end
 
     private 

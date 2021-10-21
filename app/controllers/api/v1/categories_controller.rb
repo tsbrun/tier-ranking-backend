@@ -8,4 +8,14 @@ class Api::V1::CategoriesController < ApplicationController
             type: 'Success'
         }
     end
+
+    def create 
+        category = Category.new
+    end
+
+    params 
+
+    def new_category
+        params.require(:category).permit(:title)
+    end
 end

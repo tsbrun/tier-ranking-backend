@@ -34,7 +34,7 @@ class Api::V1::ItemsController < ApplicationController
         if item.update(update_params)
             render json: {
                 data: ActiveModelSerializers::SerializableResource.new(item, serializer: ItemSerializer),
-                message: ['Item created successfully'],
+                message: ['Item updated successfully'],
                 status: 200, 
                 type: 'Success'
             }

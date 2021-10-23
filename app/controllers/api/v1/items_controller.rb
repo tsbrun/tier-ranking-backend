@@ -28,9 +28,28 @@ class Api::V1::ItemsController < ApplicationController
         end
     end
 
+    def update
+        # byebug
+        item = Item.find(params[:id])
+        if item.update(update_params)
+            render json: {
+                data: ActiveModelSerializers::SerializableResource.new(item, serializer: ItemSerializer),
+                message: ['Item created successfully'],
+                status: 200, 
+                type: 'Success'
+            }
+        else
+            render json: { errors: item.errors.full_messages }, status: :unprocessible_entity
+        end
+    end
+
     private 
 
     def item_params 
         params.require(:item).permit(:name, :img, category_attributes: [:id, :title])
+    end
+
+    def update_params
+        params.require(:item).permit(:rank)
     end
 end

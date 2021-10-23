@@ -29,7 +29,6 @@ class Api::V1::ItemsController < ApplicationController
     end
 
     def update
-        # byebug
         item = Item.find(params[:id])
         if item.update(update_params)
             render json: {

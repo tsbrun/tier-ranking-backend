@@ -2,6 +2,8 @@
 
 ## TierRanking - JS App Backend
 
-## Link to frontend
+## To get started
 
-[Frontend repo](https://github.com/tsbrun/tier-ranking-frontend)
+1. Clone this repo to your machine.
+2. Use the command `bin/rails server` to run the API.
+3. Navigate to the [frontend repo](https://github.com/tsbrun/tier-ranking-frontend) and follow the instructions there.
